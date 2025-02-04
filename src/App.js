@@ -115,7 +115,6 @@
 
 
 
-
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -176,7 +175,7 @@ const App = () => {
 
   return (
     <div className="container d-flex justify-content-center align-items-center min-vh-100">
-      <div className="card shadow p-4 w-50">
+      <div className="card shadow p-4 w-100 col-sm-12 col-md-8 col-lg-6">
         <h1 className="text-center text-primary mb-4">To-Do List</h1>
 
         <div className="input-group mb-3">
@@ -191,7 +190,7 @@ const App = () => {
             {editingId ? "Update" : "Add"}
           </button>
           {editingId && (
-            <button className="btn btn-secondary" onClick={cancelEditing}>
+            <button className="btn btn-secondary ms-2" onClick={cancelEditing}>
               Cancel
             </button>
           )}
@@ -200,10 +199,7 @@ const App = () => {
 
         <ul className="list-group">
           {todos.map((todo) => (
-            <li
-              key={todo._id}
-              className="list-group-item d-flex flex-column align-items-start"
-            >
+            <li key={todo._id} className="list-group-item d-flex flex-column align-items-start">
               <div className="d-flex w-100 justify-content-between align-items-center">
                 <span
                   className={`flex-grow-1 ${todo.completed ? "text-decoration-line-through text-muted" : ""}`}
@@ -241,3 +237,4 @@ const App = () => {
 };
 
 export default App;
+
